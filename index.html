@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>beephids</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0e0e12;
+      --surface: #17171e;
+      --border: #25252f;
+      --text: #e2e2e8;
+      --text-muted: #8888a0;
+      --accent: #7c6cf0;
+      --accent-glow: rgba(124, 108, 240, 0.15);
+      --tool-tag: #2d7a5f;
+      --game-tag: #7a532d;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 1.5rem 3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #e2e2e8, #7c6cf0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-top: 0.75rem;
+      max-width: 420px;
+      margin-inline: auto;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 30px var(--accent-glow);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25em 0.7em;
+      border-radius: 100px;
+      color: #fff;
+    }
+
+    .tag-tool {
+      background: var(--tool-tag);
+    }
+
+    .tag-game {
+      background: var(--game-tag);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .card .arrow {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-top: auto;
+      padding-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap 0.2s;
+    }
+
+    .card:hover .arrow {
+      gap: 0.6rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 3.5rem 1.25rem 2rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .projects {
+        padding: 1rem 1.25rem 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="hero">
+      <h1>beephids</h1>
+      <p>A small collection of things I've built.</p>
+    </section>
+
+    <section class="projects">
+      <a class="card" href="/stage-star/">
+        <div class="card-header">
+          <h2>Stage Star</h2>
+          <span class="tag tag-tool">Tool</span>
+        </div>
+        <p>A local-first rehearsal app for organizing performances and practicing with guide vocals and accompaniment
+          tracks.</p>
+        <span class="arrow">Open <span>&rarr;</span></span>
+      </a>
+
+      <a class="card" href="/harpoon-fishing/">
+        <div class="card-header">
+          <h2>Abyssal Fishing</h2>
+          <span class="tag tag-game">Game</span>
+        </div>
+        <p>A top-down arcade fishing game — aim and fire harpoons to catch deep-sea creatures across 22 species and 5
+          rarity tiers. Solo or 2-player split-screen.</p>
+        <span class="arrow">Play <span>&rarr;</span></span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 beephids
+  </footer>
+</body>
+
+</html>
